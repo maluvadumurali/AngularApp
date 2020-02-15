@@ -1,9 +1,6 @@
-<!-- <div *ngFor="let assignment of assignments"
-    [ngStyle]="{'color': assignment.submitted === true ? 'green' : 'red'}"> -->
-    
-<!-- <div *ngFor="let assignment of assignments"
-    [ngClass]="{'submitted':assignment.submitted === true,
-        'unsubmitted': assignment.submitted ===false}"> -->
+<form ngForm #assignmentsForm>
+    <button mat-stroked-button [disabled]="!enabled" color='primary'>Add Assignment</button>
+</form>
 
 <div *ngFor="let assignment of assignments">
 

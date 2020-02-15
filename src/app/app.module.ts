@@ -5,9 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 import { AssignmentsComponent } from './assignments/assignments.component';
 import { SubmittedDirective } from './shared/submitted.directive';
 import { UnsubmittedDirective } from './shared/unsubmitted.directive';
+import { FormsModule} from '@angular/forms';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,13 @@ import { UnsubmittedDirective } from './shared/unsubmitted.directive';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule
+  ],
+  exports:[
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
