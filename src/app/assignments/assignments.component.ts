@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AssignmentsComponent implements OnInit {
   title = "My Assignment App";
   enabled = false;
+  name:string;
   assignments =[{name:'One',dueDate:'2018-01-01',submitted:true},
                 {name:'Two',dueDate:'2019-01-01',submitted:false}]
   constructor() { }
@@ -16,6 +17,10 @@ export class AssignmentsComponent implements OnInit {
     setTimeout(() => {
       this.enabled = true;
     },2000);
+  }
+
+  onSubmit(name : string){
+    console.log(name);
   }
 
 }

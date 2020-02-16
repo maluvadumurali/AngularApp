@@ -1,7 +1,12 @@
-<form ngForm #assignmentsForm>
-    <button mat-stroked-button [disabled]="!enabled" color='primary'>Add Assignment</button>
-</form>
+<form ngForm #assignmentsForm class="form"> 
+    <mat-form-field>
+        <input matInput #assignmentName [(ngModel)]="name" name="name" >
+    </mat-form-field>
+    <button mat-stroked-button [disabled]="!enabled" (click)="onSubmit(assignmentName.value)" 
 
+    color='primary'>Add Assignment</button>
+</form>
+{{name}}
 <div *ngFor="let assignment of assignments">
 
     <p appSubmitted *ngIf="assignment.submitted; else unsubmitted"> 
