@@ -1,13 +1,12 @@
-.submitted{
-    color: green;
+.submitted {
+  color: green;
 }
 
-.unsubmitted{
-    color: red;
+.unsubmitted {
+  color: red;
 }
 
-.form
-{
-    display: flex;
-    flex-direction: column;
+.form {
+  display: flex;
+  flex-direction: column;
 }
