@@ -1,19 +1,39 @@
 <form ngForm #assignmentsForm class="form">
   <mat-form-field>
-    <input matInput #assignmentName [(ngModel)]="name" name="name">
+    <input matInput #assignmentName [(ngModel)]="name" name="name" />
   </mat-form-field>
-  <button mat-stroked-button [disabled]="!enabled" (click)="onSubmit(assignmentName.value)" color='primary'>Add
-    Assignment</button>
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      [(ngModel)]="dueDate"
+      name="name"
+      placeholder="whens your assignment due?"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <button
+    mat-stroked-button
+    [disabled]="!enabled"
+    (click)="onSubmit()"
+    color="primary"
+  >
+    Add Assignment
+  </button>
 </form>
-{{name}}
-<div *ngFor="let assignment of assignments">
 
+<P>{{ name }}</P>
+<p>{{ dueDate }}</p>
+
+<div *ngFor="let assignment of assignments">
   <p appSubmitted *ngIf="assignment.submitted; else unsubmitted">
-    Assignment {{assignment.name}} has been submitted!
+    Assignment {{ assignment.name }} has been submitted!
   </p>
 
   <ng-template #unsubmitted>
-    <p appUnsubmitted>Assignment {{assignment.name}} has been not submitted!</p>
+    <p appUnsubmitted>
+      Assignment {{ assignment.name }} has been not submitted!
+    </p>
   </ng-template>
-
 </div>
