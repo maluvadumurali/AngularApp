@@ -14,13 +14,16 @@ import { FormsModule } from "@angular/forms";
 import { from } from "rxjs";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from "@angular/material/core";
+import { AssignmentDetailComponent } from "./assignments/assignment-detail/assignment-detail.component";
+import { MatListModule } from "@angular/material/list";
 
 @NgModule({
   declarations: [
     AppComponent,
     AssignmentsComponent,
     SubmittedDirective,
-    UnsubmittedDirective
+    UnsubmittedDirective,
+    AssignmentDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { MatNativeDateModule } from "@angular/material/core";
     MatFormFieldModule,
     MatInputModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatListModule
   ],
   exports: [MatInputModule],
   providers: [],

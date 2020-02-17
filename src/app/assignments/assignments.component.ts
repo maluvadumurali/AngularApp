@@ -32,4 +32,8 @@ export class AssignmentsComponent implements OnInit {
 
     this.assignments.push(assignment);
   }
+
+  setSelected(assignment){
+    
+  }
 }
