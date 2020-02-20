@@ -12,6 +12,8 @@ export class AssignmentsComponent implements OnInit {
   name: string;
   dueDate: Date;
 
+  selectedAssignment: Assignment;
+
   assignments: Assignment[] = [
     { name: "One", dueDate: new Date("2018-01-01"), submitted: true },
     { name: "Two", dueDate: new Date("2019-01-01"), submitted: false }
@@ -33,7 +35,7 @@ export class AssignmentsComponent implements OnInit {
     this.assignments.push(assignment);
   }
 
-  setSelected(assignment){
-    
+  setSelected(assignment: Assignment) {
+    this.selectedAssignment = assignment;
   }
 }

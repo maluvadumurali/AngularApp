@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
+import { Assignment } from "../assignment.model";
 
 @Component({
-  selector: 'app-assignment-detail',
-  templateUrl: './assignment-detail.component.html',
-  styleUrls: ['./assignment-detail.component.css']
+  selector: "app-assignment-detail",
+  templateUrl: "./assignment-detail.component.html",
+  styleUrls: ["./assignment-detail.component.css"]
 })
 export class AssignmentDetailComponent implements OnInit {
+  @Input() passedAssignment: Assignment;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
